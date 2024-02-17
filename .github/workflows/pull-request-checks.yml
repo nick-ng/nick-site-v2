@@ -5,6 +5,10 @@ on:
     types: [opened, reopened, synchronize, edited]
   workflow_dispatch:
 
+env:
+  BASE_URL: ${{ vars.BASE_URL }}
+  API_HOST: ${{ vars.API_HOST }}
+
 jobs:
   checks:
     runs-on: ubuntu-latest
