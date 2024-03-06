@@ -7,7 +7,12 @@
 	<p>API Host: {PUBLIC_API_HOST}</p>
 	<button
 		on:click={async () => {
-			const res = await fetch(`${PUBLIC_API_HOST}/hello`);
+			const res = await fetch(`${PUBLIC_API_HOST}/api/markdown-document/uri/bloodlust`, {
+				mode: 'cors',
+				headers: {
+					'Access-Control-Allow-Origin': '*'
+				}
+			});
 			const resText = await res.text();
 
 			console.log('resText', resText);
